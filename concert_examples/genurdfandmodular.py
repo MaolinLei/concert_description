@@ -102,47 +102,6 @@ class urdfgen:
 
         return self.homing_joint_map
 
-class showresult: 
-    def __init__(self, inputpath):
-        # POS_data1 = []
-        # POS_data2 = []
-        # POS_data3 = []
-        self.path = inputpath
-
-    def read_txt(self):
-        with open(self.path, 'r', encoding='utf-8') as infile:
-
-            datamiddle = []
-            data = []
-            lines=infile.readline()
-            # print(lines)
-            lines = 0
-            for line in infile:
-                data_line = line.strip("\n").split()  # 去除首尾换行符，并按空格划分
-                # print(float(data_line))
-                # data2.append([int(data_line-3) for i in data_line])
-                lines = lines +1
-                # print(data_line)
-                datamiddle.append(data_line)
-                # print(datamiddle)
-                # 输出：[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]
-
-                # 输出：[['1', '2', '3', '4', '5'], ['6', '7', '8', '9', '10']]
-
-            # for line in infile:
-            #     if line >= lines-4:
-            #       data_line = line.strip("\n").split()  # 去除首尾换行符，并按空格划分
-            #       datamiddle.append(data_line)
-            #     print("data")
-            #     print(datamiddle)  
-        POS_data1 = datamiddle[lines-3]
-        POS_data2 = datamiddle[lines-2]
-        POS_data3 = datamiddle[lines-1]
-        print(POS_data1)
-        print(POS_data2)  
-        print(POS_data3)          
-        # print(data)        
-        return POS_data1, POS_data2, POS_data3
  
 # if __name__ == "__main__":
     urdf_map = [1, 0, 1, 0, 1 ]
